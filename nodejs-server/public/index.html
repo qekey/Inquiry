@@ -9,17 +9,17 @@
 				var phonecatApp = angular.module('phonecatApp', []);
 				/////////////////////////////////  
 				phonecatApp.controller('PhoneListCtrl', function($scope, $http) {
-					$http.get('/searchdigikey?name=mamamaamamamamama').success(function(data) {
+					$http.get('/searchdigikey?name=max').success(function(data) {
 						$scope.digikey = data;
-						//console.log(data + "33333");
+						console.log(data + "33333");
 					});
-					$http.get('/searchmouser?name=mamamaamamamamama').success(function(data) {
+					$http.get('/searchdigikey?name=max').success(function(data) {
 						$scope.mouser = data;
-						//console.log(data + "444444");
+						console.log(data + "444444");
 					});
-					$http.get('/searchelement?name=mamamaamamamamama').success(function(data) {
+					$http.get('/searchdigikey?name=1111').success(function(data) {
 						$scope.element = data;
-						//console.log(data + "444444");
+						console.log(data + "55555");
 					});
 					$scope.runme = function() {
 						$scope.digikey = [];

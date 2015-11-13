@@ -19,37 +19,17 @@ exports.insert = function(item,table) {
 
 
 exports.search = function(key, cb) {
-		parse.readmsg("http://www.digikey.com.cn/search/zh?keywords=" + key + "&refPId=3&stock=1", function(datadata) {
-			var $ = cheerio.load(datadata);
-			var re = [];
-
-			$('#productTable tr').each(function(index, item) {
-				console.log("aaa");
-				$(item).find("td").eq(7).find("div").remove();
-				if ($(item).find("td").eq(3).text().trim().length > 2) {
-					re.push({
-						"spn": $(item).find("td").eq(3).text().trim(),
-						"pn": $(item).find("td").eq(4).text().trim(),
-						"url": "http://www.digikey.com.cn/" + $(item).find("td").eq(3).find('a').attr("href"),
-						"kucun": $(item).find("td").eq(7).text().trim(),
-						"jiage": $(item).find("td").eq(8).text().trim()
-					})
-				}
-			});
-
-
-			if (re.length < 1) {
-				var r = digikeyinfo(datadata);
-				if (r.pn.length > 10) {
-					re.push(r)
-				} else {
-					re.push({
-						"pn": "没找到"
-					})
-				}
-			}
-			cb(re);
-		});
+	var re =[]
+for(var i=0;i<100;i++){
+	re.push({
+		"spn": 'spn'+i,
+		"pn": 'pn',
+		"url": "url",
+		"kucun": 1*i*i,
+		"jiage": 2*i
+	})
+}
+	cb(re);
 	}
 	//分析详情页 
 exports.info = function(url, cb) {
