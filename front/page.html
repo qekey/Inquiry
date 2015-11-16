@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/angucomplete.css">
     <script type="text/javascript" src="../js/angular.min.js"></script>
     <script type="text/javascript" src="../js/angucomplete.js"></script>
     <script type="text/javascript" src="../js/angular-touch.min.js"></script>
@@ -31,7 +32,15 @@
                 </tr>
                 <tr ng-repeat="product in products">
                     <td>
-                        <input type="text" ng-model="product.pn" />
+                        <angucomplete id="ex1"
+                                      placeholder="Search pn"
+                                      pause="100"
+                                      selectedobject="selectedPN"
+                                      localdata="pns"
+                                      searchfields="name"
+                                      titlefield="name"
+                                      minlength="1"
+                                      inputclass="form-control form-control-small"/>
                     </td>
                     <td>
                         <input type="text" ng-model="product.mfs" />
