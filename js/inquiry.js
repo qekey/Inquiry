@@ -30,8 +30,13 @@
         $scope.del = function (idx) {
             $scope.products.splice(idx, 1);
         }
-
-
+        //当用户在任意输入框中按下insert就会触发add的方法
+        $scope.keydown = function ($event) {
+            console.log($event.keyCode)
+           if($event.keyCode==45){
+               $scope.add()
+           };
+        }
     });
 
 
