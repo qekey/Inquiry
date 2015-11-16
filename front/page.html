@@ -5,16 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/angucomplete.css">
+    <link rel="stylesheet" href="../css/base.css">
     <script type="text/javascript" src="../js/angular.min.js"></script>
     <script type="text/javascript" src="../js/angucomplete.js"></script>
     <script type="text/javascript" src="../js/angular-touch.min.js"></script>
     <script type="text/javascript" src="../js/inquiry_zuaa.js"></script>
-
+<style type="text/css">
+	#first input{
+		height: 28px;
+	}
+</style>
 </head>
 <body >
-
-<div class="conainer ">
-    <h2 class="text-center">询价</h2>
+<div class="fixed js-header" id="header">
+    <div class="header">
+      <div class="containers">
+          <a href="/" class="logo" title="芯牛">
+            <span class="icon icon-logo"></span>
+          </a>
+          <ul class="nav-login">
+            <li><a href="/" class="login">登录</a></li>
+            <li><a href="/" class="login">注册</a></li>
+          </ul>
+          <div class="searchs">
+		    <div class="search_box">
+				<input  type="text" value="" class="">
+				<button type="submit" class="">搜索</button>
+			</div>
+          </div>
+           
+          <ul class="nav-link">
+            <li><a href="/">首页</a></li>
+            <li><a href="/">供应商</a></li>
+            <li><a href="/">分类</a></li>
+            <li><a href="/">库存管理</a></li>
+            <li><a href="/">客服</a></li>
+            <li><a href="/" target="_blank">关于</a></li>
+          </ul>
+      </div>
+    </div>
+</div>
+<div class="conainer " style="margin-top:100px;">
+    <h1 class="text-center">询价</h1>
     <form class="form-inline col-xs-12"  style="margin-top:25px;">
         <div class="form-group text-left" >
             <label>供应商：富昌电子</label>
@@ -30,7 +62,7 @@
                     <th>操作</th>
                 </tr>
                 <tr ng-repeat="product in products">
-                    <td>
+                    <td id="first">
                         <angucomplete id="ex1"
                                       placeholder="Search pn"
                                       pause="100"
@@ -54,7 +86,7 @@
                     <td>
                         <input type="text" ng-model="product.mark" placeholder="备注" />
                     </td>
-                    <td>
+                    <td class="text-center">
                         <a ng-show="$index!=0" style="color:red;" ng-click="del($index)">移除</a>
                     </td>
                 </tr>
@@ -67,13 +99,23 @@
             </table>
 
         </div>
-        <div class="col-xs-12 btn" style="margin-top:50px;">
+        <div class="col-xs-12 " style="margin-top:50px;">
             <div class="col-xs-3"></div><button type="submit" class="btn btn-info col-xs-6 ">询价</button>
+        </div>
+        <div class="col-xs-12 " style="margin-top:10px;">
+        	<span class="col-xs-7 "></span><span>批量询价，点击<a href="javascript:alert('平哥，上 ！！！斌哥做准备！！！');" >execl批量询价</a></span>
         </div>
     </form>
 
 </div>
-
-
+<div style="clear:both;"></div>
+<div class="foot">
+	<div class="content">
+		<p>www.icniu.com<br>
+		页面所有信息以及版权均归芯牛所有
+		</p>
+	</div>
+</div>
+<a class="to-top top" href="javascript:scrollTo(0,0);" >Top</a>
 </body>
 </html>
