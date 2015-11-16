@@ -1,18 +1,18 @@
 <!doctype html>
 <html ng-app="inquiry">
 <head>
-<meta charset="utf-8"/>
+    <meta charset="utf-8"/>
 
-      <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <link rel="stylesheet" href="../css/angucomplete.css">
-            
-             
-            <script type="text/javascript" src="../js/angular.min.js"></script>
-            
-             <script type="text/javascript" src="../js/angucomplete.js"></script>  
-             <script type="text/javascript" src="../js/angular-touch.min.js"></script>
-              <script type="text/javascript" src="../js/inquiry.js"></script>          
-              	
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/angucomplete.css">
+
+
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+
+    <script type="text/javascript" src="../js/angucomplete.js"></script>
+    <script type="text/javascript" src="../js/angular-touch.min.js"></script>
+    <script type="text/javascript" src="../js/inquiry.js"></script>
+
 
 </head>
 
@@ -20,86 +20,80 @@
 <body>
 
 <div class="conainer">
-	<p>询价</p>
-	
-		<div class="form-group">
-		   <label>供应商：富昌电子</label>		
-	     </div>
+    <p>询价</p>
 
-		<br/>
-		
-		<button type="submit" class="btn btn-primary">询价</button>
-		<p>
-	
-	  <div ng-controller="InquiryController">
+    <div class="form-group">
+        <label>供应商：富昌电子</label>
+    </div>
 
-		<table class="table" >
-			<tr>
-				<td>料号
-				<td>制造商</td>
-				<td>数量</td>
-				<td>交期</td>
-				<td>备注</td>
-				<td>caozuo</td>
-			</tr>
-			
-			<tr ng-repeat="product in products">
-				<td>
+    <br/>
 
-                <angucomplete id="ex1"
-              placeholder="Search pn"
-              pause="100"
-              selectedobject="selectedPN"
-              localdata="pns"
-              searchfields="name"
-              titlefield="name"
-              minlength="1"
-              inputclass="form-control form-control-small"/></td>
-				
-				 </td>
-				 <td>
-				 <select name="mySelect" id="mySelect"
-                    ng-options="option.name for option in data.availableOptions track by option.id"
-                     ng-model="data.selectedOption"></select>
-				
-				</td>
-				<td>
-				  <input type="text" ng-model="product.quantity" />
-				</td>
-				<td>
-				  <input type="text" ng-model="product.delivery" />
-				
-				</td>
-				<td>
-				<input type="text" ng-model="product.mark" placeholder="备注" />
-			</td>
-			 <td><a ng-show="$index!=0" style="color:red;" ng-click="del($index)">移除</a></td>
-				
-			</tr>
-			
-		 
+    <button type="submit" class="btn btn-primary">询价</button>
+    <p>
 
-		</table>
-	 <button ng-click="add()">增加一个</button>
+    <div ng-controller="InquiryController">
 
-	 <div ng-controller="MainController">
+        <table class="table">
+            <tr>
+                <td>料号
+                <td>制造商</td>
+                <td>数量</td>
+                <td>交期</td>
+                <td>备注</td>
+                <td>caozuo</td>
+            </tr>
 
-	
-          
-	</div>
-		 
-	
-		
-		
-		<script>
-		
-		
-		
-		</script>
-		
-		
-	
-	
+            <tr ng-repeat="product in products">
+                <td>
+
+                    <angucomplete id="ex1"
+                                  placeholder="Search pn"
+                                  pause="100"
+                                  selectedobject="selectedPN"
+                                  localdata="pns"
+                                  searchfields="name"
+                                  titlefield="name"
+                                  minlength="1"
+                                  inputclass="form-control form-control-small"/>
+                </td>
+
+                </td>
+                <td>
+
+                    <select name="mySelect" id="mySelect"
+                            ng-options="option.name for option in data.availableOptions track by option.id"
+                            ng-model="data.selectedOption"></select>
+
+                </td>
+                <td>
+                    <input type="text" ng-model="product.quantity"/>
+                </td>
+                <td>
+                    <input type="text" ng-model="product.delivery"/>
+
+                </td>
+                <td>
+                    <input type="text" ng-model="product.mark" placeholder="备注"/>
+                </td>
+                <td><a ng-show="$index!=0" style="color:red;" ng-click="del($index)">移除</a></td>
+
+            </tr>
+
+
+        </table>
+        <button ng-click="add()">增加一个</button>
+
+        <div ng-controller="MainController">
+
+
+        </div>
+
+
+        <script>
+
+
+        </script>
+
 
 </body>
 </html>

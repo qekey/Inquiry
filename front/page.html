@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="inquiry">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script type="text/javascript" src="../js/angucomplete.js"></script>
+    <script type="text/javascript" src="../js/angular-touch.min.js"></script>
+    <script type="text/javascript" src="../js/inquiry.js"></script>
+
+</head>
+<body>
+
+<div class="conainer ">
+    <h2 class="text-center">询价</h2>
+    <form class="form-inline col-xs-12"  style="margin-top:25px;">
+        <div class="form-group text-left" >
+            <label>供应商：富昌电子</label>
+        </div>
+
+        <div ng-controller="InquiryController" class="">
+            <table class="table table-bordered col-xs-10"  >
+                <tr>
+                    <th>料号</th>
+                    <th>制造商</th>
+                    <th>数量</th>
+                    <th>交期</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+                <tr ng-repeat="product in products">
+                    <td>
+                        <input type="text" ng-model="product.pn" />
+                    </td>
+                    <td>
+                        <input type="text" ng-model="product.mfs" />
+
+                    </td>
+                    <td>
+                        <input type="text" ng-model="product.quantity" />
+                    </td>
+                    <td>
+                        <input type="text" ng-model="product.delivery" />
+
+                    </td>
+                    <td>
+                        <input type="text" ng-model="product.mark" placeholder="备注" />
+                    </td>
+                    <td>
+                        <a ng-show="$index!=0" style="color:red;" ng-click="del($index)">移除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="6">
+                        <button class="btn btn-success col-xs-12" ng-click="add()">增加一个</button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+        <div class="col-xs-12 btn" style="margin-top:50px;">
+            <div class="col-xs-3"></div><button type="submit" class="btn btn-info col-xs-6 ">询价</button>
+        </div>
+    </form>
+
+</div>
+
+
+</body>
+</html>
