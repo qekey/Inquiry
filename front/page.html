@@ -8,10 +8,10 @@
     <script type="text/javascript" src="../js/angular.min.js"></script>
     <script type="text/javascript" src="../js/angucomplete.js"></script>
     <script type="text/javascript" src="../js/angular-touch.min.js"></script>
-    <script type="text/javascript" src="../js/inquiry.js"></script>
+    <script type="text/javascript" src="../js/inquiry_zuaa.js"></script>
 
 </head>
-<body>
+<body >
 
 <div class="conainer ">
     <h2 class="text-center">询价</h2>
@@ -20,8 +20,8 @@
             <label>供应商：富昌电子</label>
         </div>
 
-        <div ng-controller="InquiryController" class="">
-            <table class="table table-bordered col-xs-10"  >
+        <div ng-controller="InquiryController" class=""  >
+            <table class="table table-bordered col-xs-10"  ng-keydown="keydown($event)">
                 <tr>
                     <th>料号</th>
                     <th>制造商</th>
@@ -43,8 +43,7 @@
                                       inputclass="form-control form-control-small"/>
                     </td>
                     <td>
-                        <input type="text" ng-model="product.mfs" />
-
+                        <input type="text" ng-model="product.mfs"  />
                     </td>
                     <td>
                         <input type="text" ng-model="product.quantity" />
